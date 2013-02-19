@@ -4,10 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>vTimeline by haarer0</title>
+  
+    <link rel="stylesheet" href="vTimeline/vTimeline.css">
+
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
     <script src="javascripts/respond.js"></script>
+
+
+
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -18,38 +24,108 @@
 
   </head>
   <body>
-      <div id="header">
+      <header>
         <nav>
-          <li class="fork"><a href="https://github.com/haarer0/vTimeline">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/haarer0/vTimeline/dev/zipball/master/">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/haarer0/vTimeline/dev/tarball/master/">TAR</a></li>
-          <li class="title">DOWNLOAD LATEST</li>
+            <li class="fork"><a href="https://github.com/haarer0/vTimeline">View On GitHub</a></li>
+            <li class="title"><a class="pseudolink" id="nav-example" href="/example">Live example</a></li>
+            <li class="title"><a class="pseudolink" id="nav-documentation" href="/documentation">Documentation</a></li>
+            <li class="title"><a class="current pseudolink" id="nav-about" href="/about">About</a></li>
         </nav>
-      </div><!-- end header -->
+
+      </header><!-- end header -->
 
     <div class="wrapper">
-      <section>
-        <div id="title">
-          <h1>vTimeline</h1>
-          <p>vTimeline is jQuery plugin that helps to make Facebook-like vertical timelines.</p>
+        <div class="page" id="page-about">
+            <div id="title">
+                <h1>vTimeline</h1>
+                <p>vTimeline is jQuery plugin that helps to make Facebook-like vertical timelines.</p>
+            </div>
+        </div>  
+        <div class="page" id="page-documentation">
+            documentation
         </div>
-      </section>
-      <hr>
-      <section>
-          <div id="title">
-              <a>Documentation</a>
-              <a>Live demo</a>
-          </div>
+        <div class="page" id="page-example">
+            <div class="timeline-container" id="timeline-container">
+              <div class="timeline-controls"><button class="timeline-add" id="add-random">Add random paragraph</button></div>
+              <div class="timeline-nav"></div>
 
-      </section>
+              <div class="timeline-item" data-date="2013-02-06 12:01:04">
+                <p class="entry-datetime">06 Feb 2013 12:01:04</p>
+                <p class="entry-header">Lorem ipsum</p>
+                <p class="entry-author">Jonh Doe</p>
+                <p class="entry-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus elementum risus in interdum. Mauris velit erat, commodo a laoreet quis, dignissim ut nunc. Curabitur non purus dui, ac iaculis orci. Morbi tristique justo et quam sagittis eget mollis arcu congue. Praesent convallis eros at leo tincidunt sit amet iaculis nisl laoreet. In hac habitasse platea dictumst. Donec sollicitudin, mi vitae aliquam viverra, dolor urna pretium metus, at tincidunt urna est in nibh.<br>Sed felis arcu, malesuada congue iaculis eu, dapibus vitae nunc. Aliquam id arcu a velit fermentum iaculis. Duis odio odio, dictum sed tristique tristique, viverra at metus. Aliquam id sapien quis arcu vehicula commodo. Vestibulum sollicitudin elementum erat, at tempus massa commodo in. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi sollicitudin convallis enim, eget accumsan nunc adipiscing ac. Duis tempus tempor orci, et tincidunt enim dignissim ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus elementum risus in interdum. Mauris velit erat, commodo a laoreet quis, dignissim ut nunc. Curabitur non purus dui, ac iaculis orci. Morbi tristique justo et quam sagittis eget mollis arcu congue. Praesent convallis eros at leo tincidunt sit amet iaculis nisl laoreet. In hac habitasse platea dictumst. Donec sollicitudin, mi vitae aliquam viverra, dolor urna pretium metus, at tincidunt urna est in nibh.<br>Sed felis arcu, malesuada congue iaculis eu, dapibus vitae nunc. Aliquam id arcu a velit fermentum iaculis. Duis odio odio, dictum sed tristique tristique, viverra at metus. Aliquam id sapien quis arcu vehicula commodo. Vestibulum sollicitudin elementum erat, at tempus massa commodo in. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi sollicitudin convallis enim, eget accumsan nunc adipiscing ac. Duis tempus tempor orci, et tincidunt enim dignissim ac.</p>
+              </div>
+
+              <div class="timeline-item" data-date="2013-02-07 12:02:01">
+                <p class="entry-datetime">07 Feb 2013 12:02:01</p>
+                <p class="entry-header">Ut sit amet mi</p>
+                <p class="entry-author">Jonh Doe</p>
+                <p class="entry-text">Ut sit amet mi dignissim arcu ultrices vehicula. Aliquam at dui id sapien blandit tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec sodales neque eu ante ullamcorper a rhoncus velit sodales. Nulla id dolor ligula. Suspendisse pretium urna sodales risus volutpat ut sagittis mauris congue. Curabitur euismod dignissim eros eget egestas. Etiam at dolor vel augue imperdiet aliquam et eu elit. Quisque malesuada egestas tempus. Fusce tristique commodo dui quis gravida. Integer vel mi odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae</p>
+              </div>
+              
+              <div class="timeline-item" data-date="2013-01-11 12:03:07">
+                <p class="entry-datetime">11 Jan 2013 12:03:07</p>
+                <p class="entry-header">Phasellus rhoncus velit</p>
+                <p class="entry-author">Jonh Doe</p>
+                <p class="entry-text">Phasellus rhoncus velit sit amet tortor tempor vitae fermentum ante sollicitudin. Nullam id felis urna, ut malesuada ante. Aliquam ipsum dolor, pulvinar tincidunt venenatis at, semper cursus est. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique viverra scelerisque. Cras in leo at justo porttitor ullamcorper nec ut magna. Cras ligula lacus, laoreet vitae congue quis, tempor id libero. Phasellus sed augue elit. Sed eget nisi justo, et tempus purus. Donec at enim ut odio facilisis fringilla.</p>
+              </div>
+              
+              <div class="timeline-item" data-date="2013-02-07 02:04:02">
+                <p class="entry-datetime">07 Feb 2013 02:04:02</p>
+                <p class="entry-header">Sed arcu turpis</p>
+                <p class="entry-author">Jonh Doe</p>
+                <p class="entry-text">Sed arcu turpis, consequat at bibendum euismod, condimentum at felis. Sed arcu turpis, consequat at bibendum euismod, Sed arcu turpis, consequat at bibendum euismod, Vestibulum pellentesque nibh in purus mollis eget adipiscing risus consequat. Suspendisse potenti. Nunc bibendum pellentesque elit, quis egestas arcu interdum vitae. Phasellus faucibus ipsum nec nulla venenatis non ullamcorper est mattis. Aenean sollicitudin erat a augue condimentum at dictum orci venenatis. Nullam fermentum tortor sit amet ligula euismod ullamcorper. Vestibulum sed pulvinar nisi. Ut orci sapien, tristique in auctor quis, scelerisque eget tellus. Morbi varius metus id lacus dictum imperdiet. Pellentesque ullamcorper elit sed tortor cursus ac suscipit metus pellentesque.</p>
+              </div>
+              
+              <div class="timeline-item" data-date="2013-02-01 12:05:06">
+                <p class="entry-datetime">01 Feb 2013 12:05:06</p>
+                <p class="entry-header">Vestibulum egestas</p>
+                <p class="entry-author">Jonh Doe</p>
+                <p class="entry-text">Vestibulum egestas diam vel lectus iaculis aliquam. In hac habitasse platea dictumst. Vivamus a malesuada metus. Donec aliquet egestas velit, eu fermentum ante bibendum nec. Maecenas id urna augue, non aliquet ligula. Nulla non sagittis augue. Curabitur ut dictum leo. Curabitur ut mauris nec dui semper ullamcorper. Donec cursus, lorem nec lobortis mattis, diam ipsum rutrum est, vitae rhoncus velit magna a diam. Suspendisse scelerisque, odio non mollis tincidunt, libero orci iaculis eros, a dapibus massa libero sit amet odio. Praesent aliquam metus in nibh ornare semper. Aliquam erat volutpat. Nulla facilisi.</p>
+              </div>
+              
+              <div class="timeline-item" data-date="2013-02-07 01:06:03">
+                <p class="entry-datetime">07 Feb 2013 01:06:03</p>
+                <p class="entry-header">Mauris bibendum</p>
+                <p class="entry-author">Jonh Doe</p>
+                <p class="entry-text">Mauris bibendum feugiat mauris lobortis sagittis. Mauris bibendum feugiat mauris lobortis sagittis. Mauris venenatis mi et augue consequat viverra. Integer sit amet consectetur ligula. Donec massa sem, ultrices ac semper id, imperdiet blandit felis. Curabitur vel interdum augue. Praesent ullamcorper eleifend urna, at suscipit odio iaculis id. Integer magna felis, aliquet vel lobortis placerat, bibendum malesuada neque. Phasellus molestie orci vel lectus blandit condimentum. Mauris eget mauris ipsum, ultrices malesuada orci. Phasellus eget auctor libero. Nam id rhoncus arcu. Quisque condimentum tortor quis sapien adipiscing nec tristique leo auctor. Integer vestibulum ullamcorper vestibulum. In sapien risus, ultricies vel tincidunt ac, dapibus lacinia nibh.</p>
+              </div>
+              
+              <div class="timeline-item" data-date="2013-01-10 12:07:08">
+                <p class="entry-datetime">10 Jan 2013 12:07:08</p>
+                <p class="entry-header">Nullam id felis urna</p>
+                <p class="entry-author">Jonh Doe</p>
+                <p class="entry-text">Nullam id felis urna, ut malesuada ante. Aliquam ipsum dolor, pulvinar tincidunt venenatis at, semper cursus est. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique viverra scelerisque. Cras in leo at justo porttitor ullamcorper nec ut magna. Cras ligula lacus, laoreet vitae congue quis, tempor id libero. Phasellus sed augue elit. Sed eget nisi justo, et tempus purus. Donec at enim ut odio facilisis fringilla.</p>
+              </div>
+              
+              <div class="timeline-item" data-date="2013-02-03 12:08:05">
+                <p class="entry-datetime">03 Feb 2013 12:08:05</p>
+                <p class="entry-header">Ut aliquet pulvinar</p>
+                <p class="entry-author">Jonh Doe</p>
+                <p class="entry-text">Ut aliquet pulvinar quam nec porta. Sed imperdiet, odio eu tempus mattis, Ut aliquet pulvinar quam nec porta. arcu nunc interdum risus, nec bibendum arcu risus ut sem. Pellentesque vel mauris dolor, vel porttitor urna. Morbi laoreet justo tellus, a blandit mi. Cras vitae nulla ac nulla aliquam pulvinar non consectetur quam. Etiam nunc justo, bibendum eu dapibus eu, aliquam sed odio. Donec vulputate volutpat sem et eleifend. Vivamus eget massa metus, quis hendrerit tellus. Vivamus sed dolor ac ligula dignissim dapibus. Mauris sagittis mollis elit, quis venenatis quam dictum vel. Donec vel blandit erat. Mauris sollicitudin malesuada ligula, eget consectetur nisl ultricies sed. Quisque diam quam, congue sit amet dapibus ut, feugiat et mauris. Aliquam vitae leo sem.</p>
+              </div>
+            </div>
+        </div>       
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
-    <div id="footer">
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/haarer0">haarer0</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
-    </div>
+    <footer>
+        <div class="credits">
+            <div class="authors">
+                <p class="project-author">Project maintained by <a href="https://github.com/haarer0">Dmitry Korniienko</a></p>
+                <p class="theme-author">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></p>
+            </div>
+            <div class="date">
+                <p class="site-date">2013</p>
+            </div>
+        </div>
+    </footer>
 
+    <script src="javascripts/jQuery.min.js"></script>
+
+    <script src="vTimeline/jQuery.vTimeline.js"></script>
+
+
+    <script src="javascripts/main.js"></script>
   </body>
 </html>

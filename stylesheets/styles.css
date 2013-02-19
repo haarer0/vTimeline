@@ -523,6 +523,11 @@ textarea {
 /*
  * Remove most spacing between table cells
  */
+
+a:focus {
+  outline: none !important;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -606,9 +611,11 @@ strong {
 
 .wrapper {
   max-width: 650px;
-  margin: 0 auto;
-  position: relative;
-  padding: 0 20px;
+  margin: 60px auto -30px;
+  padding: 10px;
+  height: 100%;
+
+  background-color: #333;
 }
 
 section img {
@@ -694,7 +701,7 @@ dt {
   font-weight: normal;
 }
 
-#header {
+header {
   z-index: 100;
   left: 0;
   top: 0px;
@@ -703,19 +710,19 @@ dt {
   position: fixed;
   background: url(../images/nav-bg.gif) #353535;
   border-bottom: 4px solid #434343;
-  -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
-  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
-  -o-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
 }
-#header nav {
+header nav {
   max-width: 650px;
   margin: 0 auto;
   padding: 0 10px;
   background: blue;
   margin: 6px auto;
 }
-#header nav li {
+header nav li {
   font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   list-style: none;
@@ -725,7 +732,7 @@ dt {
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
   font-size: 14px;
 }
-#header nav li a {
+header nav li a {
   color: white;
   border: 1px solid #5d910b;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #93bd20), color-stop(100%, #659e10));
@@ -752,7 +759,18 @@ dt {
   display: inline-block;
   text-align: center;
 }
-#header nav li a:hover {
+
+header nav li a.current {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c4e679), color-stop(100%, #a2ef6e));
+  background: -webkit-linear-gradient(#c4e679, #a2ef6e);
+  background: -moz-linear-gradient(#c4e679, #a2ef6e);
+  background: -o-linear-gradient(#c4e679, #a2ef6e);
+  background: -ms-linear-gradient(#c4e679, #a2ef6e);
+  background: linear-gradient(#c4e679, #a2ef6e);
+  background-color: #b5ee70;
+}
+
+header nav li a:hover {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #749619), color-stop(100%, #527f0e));
   background: -webkit-linear-gradient(#749619, #527f0e);
   background: -moz-linear-gradient(#749619, #527f0e);
@@ -766,15 +784,15 @@ dt {
   -o-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
   box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
 }
-#header nav li.fork {
+header nav li.fork {
   float: left;
   margin-left: 0px;
 }
-#header nav li.downloads {
+header nav li.downloads {
   float: right;
   margin-left: 6px;
 }
-#header nav li.title {
+header nav li.title {
   float: right;
   margin-right: 10px;
   font-size: 11px;
@@ -806,19 +824,6 @@ section #title p {
   font-size: 18px;
   text-align: center;
 }
-section #title .credits {
-  font-size: 11px;
-  font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: normal;
-  color: #696969;
-  margin-top: -10px;
-}
-section #title .credits.left {
-  float: left;
-}
-section #title .credits.right {
-  float: right;
-}
 
 @media print, screen and (max-width: 720px) {
   #title .credits {
@@ -837,7 +842,7 @@ section #title .credits.right {
   }
 }
 @media print, screen and (max-width: 480px) {
-  #header {
+  header {
     margin-top: -20px;
   }
 
@@ -848,4 +853,153 @@ section #title .credits.right {
   nav {
     display: none;
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.page {
+  display: none;
+
+  width: 100%;
+}
+
+
+
+
+footer {
+  width: 100%;
+  height: 20px;
+  margin: 0 auto;
+  padding-top: 10px;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: url("../images/nav-bg.gif") repeat scroll 0 0 #353535;
+  border-top: 4px solid #434343;
+
+
+  -moz-box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.5);
+}
+
+footer p {
+  margin: 0;
+  padding: 0;
+}
+
+.credits {
+  width: 640px;
+  margin: 0 auto;
+  font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  margin-top: -10px;
+}
+
+.authors {
+    float: left;
+    width: 90%;
+}
+
+.date {
+  float: right;
+  width: 10%;
+}
+
+.project-author {
+    color: #eee;
+    font-size: 12px;
+}
+
+.theme-author {
+    color: #999;
+    font-size: 8px;
+}
+
+.site-date {
+    font-family: 'OpenSansBold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    color: #eee;
+    font-size: 18px;
+}
+
+
+.timeline-container {
+    padding-bottom: 60px;
+}
+
+.timeline-item {
+  background-color: #777;
+  margin: 20px 0;  
+  padding: 20px;
+
+  -webkit-border-radius:    8px;
+  -moz-border-radius:     8px;
+  border-radius:        8px;        
+}
+
+.timeline-item-arrow {
+  border-top:           10px solid rgba(119,119,119,0);
+  border-bottom:        10px solid rgba(119,119,119,0); 
+}
+
+.timeline-item-arrow.right {                  /* right-side arrow, attached to left items */
+  border-left:        10px solid #777;
+}
+
+.timeline-item-arrow.left {                   /* left-side arrow, attached to right items */
+  border-right:         10px solid #777;
+}
+
+.timeline-nav-line {                      /* vertical line */
+  background-color:       #777;
+}
+
+.timeline-nav-point {                       /* event point */
+  border:           4px solid #999;
+}
+
+.timeline-item p {
+  margin: 0;
+  padding: 0;
+}
+
+.entry-datetime {
+    font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 10px;
+    color: #eee;
+    width: 100%;
+    text-align: right;
+    text-decoration: underline;  
+}
+
+.entry-header {
+    font-family: 'OpenSansBold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 16px;
+    color: #fff;     
+    line-height: 10px;
+    text-shadow: 1px 1px 1px #333;
+}
+
+.entry-author {
+    font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 14px;
+    font-style: italic;
+    color: #fff;  
+    margin-bottom: 10px;    
+}
+
+.entry-text {
+    font-family: Arial, sans-serif !important;
+    font-size: 12px;     
 }

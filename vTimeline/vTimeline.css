@@ -1,0 +1,62 @@
+/* 
+* vTimeline 0.1
+* Default / initial properties for vTimeline. Feel free to change params or overwrite them in own css file
+* Note that you don't need to add "position" to the containers because they will be added automatically
+*
+* last changed 18 Feb 2013
+* Dmitry Korniienko, AKQA
+* dmitry.korniienko|at|akqa.com / haarer0|at|gmail.com
+*/
+
+.timeline-container {	
+	padding: 					40px 20px 10px;
+}
+
+.timeline-controls {
+	margin-top:					-35px;
+	z-index: 					200;
+}
+
+.timeline-item {
+	background-color: 			#fff;
+	margin: 					20px 0; 						/* top + bottom values determinate gap between elements*/
+}
+
+.timeline-nav {
+	margin: 					0 25px;							/* horizontal gap between nav line and element */
+	margin-top: 				-20px;							/* nav line will begin from the controls container */
+}
+
+.timeline-nav-line { 											/* vertical line */
+	background-color: 			#fff;
+	width: 						4px;							
+}
+
+.timeline-nav-point { 											/* event point */
+	border: 					4px solid #fff;
+	margin: 					4px 0;							/* vertical gap between point and timeline */
+	width: 						0;
+	height: 					0;
+
+	-webkit-border-radius: 		8px;
+	-moz-border-radius: 		8px;
+	border-radius: 				8px;
+}
+
+.timeline-item-arrow { 											/* arrows from item to timeline */
+	background-color: 			transparent;
+	border-top: 				10px solid rgba(255,255,255,0); /* to prevent FF anti-aliasing bug - color is set by the same ARGB as arrow */
+	border-bottom: 				10px solid rgba(255,255,255,0); 
+	border-top: 				10px solid transparent; 		/* IE7 fallback */
+	border-bottom: 				10px solid transparent;
+	width: 						0;
+	height: 					0;
+}
+
+.timeline-item-arrow.right { 									/* right-side arrow, attached to left items */
+	border-left: 				10px solid #fff;
+}
+
+.timeline-item-arrow.left { 									/* left-side arrow, attached to right items */
+	border-right: 				10px solid #fff;
+}
