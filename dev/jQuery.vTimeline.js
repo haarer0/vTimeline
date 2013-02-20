@@ -82,13 +82,13 @@
 	}
 
 	function _PrepareControls() {
-		_$controls.css({'left' : _$container.outerWidth(true) / 2 - _$controls.outerWidth() / 2});
+		_$controls.css({'left' : _$container.outerWidth(false) / 2 - _$controls.outerWidth() / 2});
 	}
 
 	function _PrepareNav() {
 		_$nav.html('');
 
-		_nNavLineHOffset = (_$container.outerWidth(true) - _$nav.outerWidth(true)) / 2;
+		_nNavLineHOffset = (_$container.outerWidth(false) - _$nav.outerWidth(true)) / 2;
 		var navLine = _CreateElement(_GetSettingsParam('nav', 'lineClass'), _$nav);
 		navLine.css({
 			'position': 'absolute',
