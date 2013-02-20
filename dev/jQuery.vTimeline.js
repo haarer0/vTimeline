@@ -177,9 +177,8 @@
 		}
 
 		var nLeftOffset = parseInt(_$container.css('padding-top'), 10);
-		var nRightOffset = nLeftOffset;
-
 		var nElementsGap = parseInt(_$items.css('margin-top'), 10) + parseInt(_$items.css('margin-bottom'), 10);
+		var nRightOffset = nLeftOffset + nElementsGap;
 
 		var prevDate = _aItems[0].date;
 
@@ -213,7 +212,7 @@
 				}
 			}
 
-			var arrow = _CreateElement(arrowClass, _$nav);
+			var arrow = _CreateElement(arrowClass, $el);
 
 			//nPointTopPos += (nLeftOffset === nRightOffset === nPointTopPos) && nPointTopPos ? 20 : 0;
 			if (nLeftOffset <= nRightOffset) {
@@ -223,12 +222,14 @@
 					'top' :  nLeftOffset
 				});
 
-				nPointTopPos = nLeftOffset + ((nLeftOffset > (nPointTopPos - 20)) ? 20 : 60);
-
+				var nElOffset = (nLeftOffset > (nPointTopPos - 20)) ? 20 : 60
+				nPointTopPos = nLeftOffset + nElOffset;
 
 				arrow.addClass(arrowRightClass);
 				arrow.css({
-					'left' : -parseInt(_$nav.css('margin-left'), 10) - _$nav.width() / 2
+					'right' : -arrow.outerWidth(true),
+					'top' : nElOffset,
+					'position' : 'absolute'
 				});
 
 				nLeftOffset += $el.outerHeight(true) + nElementsGap;
@@ -239,11 +240,14 @@
 					'top' : nRightOffset
 				});
 
-				nPointTopPos = nRightOffset + ((nRightOffset > (nPointTopPos - 20)) ? 20 : 60);
+				var nElOffset = (nRightOffset > (nPointTopPos - 20)) ? 20 : 60
+				nPointTopPos = nRightOffset + nElOffset;
 
 				arrow.addClass(arrowLeftClass);
 				arrow.css({
-					'right' : -parseInt(_$nav.css('margin-right'), 10)
+					'left' : -arrow.outerWidth(true),
+					'top' : nElOffset,
+					'position' : 'absolute'
 				});
 
 				nRightOffset += $el.outerHeight(true) + nElementsGap;
@@ -255,18 +259,17 @@
 				'top' : nPointTopPos,
 				'left' : -point.outerWidth(true) / 2 + navLineW / 2,
 				'position' : 'absolute'
-			});			
+			});
+
+			arrow.css({
+				'top' : arrow.position().top - parseInt(point.css('margin-top'), 10) / 2
+			});	
 
 			var navLine = _CreateElement(navLineClass, _$nav);
 			navLine.css({
 				'top' : nLastNavLineTop,
 				'left': 0,
 				'height' : nPointTopPos - nLastNavLineTop,
-				'position' : 'absolute'
-			});
-
-			arrow.css({
-				'top': nPointTopPos - parseInt(point.css('margin-bottom'), 10) / 2,
 				'position' : 'absolute'
 			});
 
@@ -312,10 +315,10 @@
 			_PrepareControls();
 			_PrepareNav();
 			_PrepareItems();
-			_PlaceItems();
 		},
 
 	    update : function() {
+			_PrepareControls();
 			_PrepareNav();
 			_PrepareItems();
 			_PlaceItems();
